@@ -64,11 +64,12 @@ function createRock(x) {
 
      if (top < GAME_HEIGHT) {
        window.requestAnimationFrame(moveRock)
-     }
-      else {
+     } else {
         rock.remove()
       }
     }
+
+   window.requestAnimationFrame(moveRock)
 
    ROCKS.push(rock)
 
@@ -101,40 +102,28 @@ function moveDodger(e) {
     moveDodgerRight()
  }
 }
-  // implement me!
-  /**
-   * This function should call `moveDodgerLeft()`
-   * if the left arrow is pressed and `moveDodgerRight()`
-   * if the right arrow is pressed. (Check the constants
-   * we've declared for you above.)
-   * And be sure to use the functions declared below!
-   */
 
+// implement me!
 function moveDodgerLeft() {
   window.requestAnimationFrame(function() {
     const left = positionToInteger(DODGER.style.left)
 
     if (left > 0) {
-      DODGER.style.left = `${left -= 4}px`
+      DODGER.style.left = `${left - 4}px`
     }
   })
 }
-  // implement me!
-  /**
-   * This function should move DODGER to the left
-   * (maybe 4 pixels?). Use window.requestAnimationFrame()!
-   */
 
 function moveDodgerRight() {
   window.requestAnimationFrame(function() {
     const right = positionToInteger(DODGER.style.left)
 
     if (right < 360) {
-      DODGER.style.left = `${right += 4}px`
+      DODGER.style.left = `${right + 4}px`
     }
   })
 }
-  // implement me!
+
 /**
  * This function should move DODGER to the right
  * (maybe 4 pixels?). Use window.requestAnimationFrame()!
