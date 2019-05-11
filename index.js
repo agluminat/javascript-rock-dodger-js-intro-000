@@ -25,17 +25,6 @@ function checkCollision(rock) {
     // The rock is 20 pixel's wide -- how do we get the right edge?
     const rockRightEdge = positionToInteger(rock.style.left) + 20
 
-    /** if (false
-               * Think about it -- what's happening here?
-               * There's been a collision if one of three things is true:
-               * 1. The rock's left edge is < the DODGER's left edge,
-               *    and the rock's right edge is > the DODGER's left edge;
-               * 2. The rock's left edge is > the DODGER's left edge,
-               *    and the rock's right edge is < the DODGER's right edge;
-               * 3. The rock's left edge is < the DODGER's right edge,
-               *    and the rock's right edge is > the DODGER's right edge
-               ) {*/
-
       if ((rockLeftEdge <= dodgerLeftEdge && rockRightEdge >= dodgerLeftEdge) ||
       (rockLeftEdge >= dodgerLeftEdge && rockRightEdge <= dodgerRightEdge) ||
       (rockLeftEdge <= dodgerRightEdge && rockRightEdge >= dodgerRightEdge)) {
@@ -103,7 +92,6 @@ function moveDodger(e) {
  }
 }
 
-// implement me!
 function moveDodgerLeft() {
   window.requestAnimationFrame(function() {
     const left = positionToInteger(DODGER.style.left)
@@ -113,11 +101,6 @@ function moveDodgerLeft() {
     }
   })
 }
-  // implement me!
-  /**
-   * This function should move DODGER to the left
-   * (maybe 4 pixels?). Use window.requestAnimationFrame()!
-   */
 
 function moveDodgerRight() {
   window.requestAnimationFrame(function() {
@@ -129,12 +112,7 @@ function moveDodgerRight() {
   })
 }
 
-/**
- * This function should move DODGER to the right
- * (maybe 4 pixels?). Use window.requestAnimationFrame()!
- */
 
-/**
  * @param {string} p The position property
  * @returns {number} The position as an integer (without 'px')
  */
